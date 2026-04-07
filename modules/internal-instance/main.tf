@@ -9,7 +9,7 @@ locals {
 module "clb" {
   count = var.create ? 1 : 0
 
-  source = "git::https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-clb.git?ref=master"
+  source = "../.."
   clb_name                     = local.name
   network_type                 = "INTERNAL"
   vpc_id                       = var.clb.vpc_id

@@ -30,8 +30,8 @@ inputs = {
     internet_charge_type = "TRAFFIC_POSTPAID_BY_HOUR"
     dynamic_vip  = true
 
-    vpc_id = "vpc-j0sqtqk7"
-    sg_ids = ["sg-3fj6w1au"]
+    vpc_id = "vpc-j0sxxxx7"
+    sg_ids = ["sg-3fjxxxxu"]
 
     master_zone_id = "ap-singapore-1"
     slave_zone_id = "ap-singapore-4"
@@ -86,9 +86,9 @@ No providers.
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_clb"></a> [clb](#module\_clb) | git::https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-clb.git | master |
+| Name | Source                                                                                         | Version |
+|------|------------------------------------------------------------------------------------------------|---------|
+| <a name="module_clb"></a> [clb](#module\_clb) | git::https://github.com/terraform-tencentcloud-modules-tmigrate/terraform-tencentcloud-clb.git | master |
 
 ## Resources
 

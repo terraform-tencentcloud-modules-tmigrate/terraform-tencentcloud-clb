@@ -52,9 +52,9 @@ inputs = {
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_clb"></a> [clb](#module\_clb) | git::https://github.com/terraform-tencentcloud-modules/terraform-tencentcloud-clb.git | master |
+| Name | Source                                                                                         | Version |
+|------|------------------------------------------------------------------------------------------------|---------|
+| <a name="module_clb"></a> [clb](#module\_clb) | git::https://github.com/terraform-tencentcloud-modules-tmigrate/terraform-tencentcloud-clb.git | master |
 
 ## Resources
 
