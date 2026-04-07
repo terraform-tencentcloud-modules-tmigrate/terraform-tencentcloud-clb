@@ -7,7 +7,7 @@ locals {
 module "clb" {
   count = var.create ? 1 : 0
 
-  source = ".."
+  source = "../.."
   clb_name                     = local.name
   network_type                 = "OPEN"
   vpc_id                       = var.clb.vpc_id
