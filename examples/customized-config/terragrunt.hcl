@@ -11,7 +11,7 @@ add_header Access-Control-Allow-Methods 'POST, OPTIONS';
 add_header Access-Control-Allow-Origin *;
 EOT
   load_balancer_ids = [
-    "lb-013k3ois",
-    "lb-brjfkww8"
+    "lb-013xxxxs",
+    "lb-brjxxxx8"
   ]
 }

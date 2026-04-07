@@ -46,6 +46,7 @@ resource "tencentcloud_clb_instance" "this" {
     ignore_changes = [
       // tke-clusterId is a preserved tag used by TKE for service attaching CLBs
       tags["tke-clusterId"],
+      snat_ips, # snat_ips can not be changed from this resource
     ]
   }
 }
