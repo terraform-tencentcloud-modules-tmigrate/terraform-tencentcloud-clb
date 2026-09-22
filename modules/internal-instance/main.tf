@@ -32,7 +32,7 @@ module "clb" {
   log_topic_id = try(var.clb.log_topic_id, null)
 
   project_id = try(var.clb.project_id, 0)
-  tags                         = var.tags
+  clb_tags                     = var.tags
 
 }
 
