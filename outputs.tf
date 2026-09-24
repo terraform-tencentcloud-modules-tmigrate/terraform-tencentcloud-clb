@@ -48,6 +48,11 @@ output "vpc_id" {
   value       = length(local.this_clb_info) > 0 ? local.this_clb_info[0].vpc_id : ""
 }
 
+output "numerical_vpc_id" {
+  description = "Numerical Id of the VPC (used by monitor alarm binding dimensions)."
+  value       = tencentcloud_clb_instance.this.numerical_vpc_id
+}
+
 output "subnet_id" {
   description = "Id of the subnet."
   value       = length(local.this_clb_info) > 0 ? local.this_clb_info[0].subnet_id : ""
