@@ -13,4 +13,8 @@ resource "tencentcloud_clb_redirection" "clb_redirection" {
   is_auto_rewrite         = try(each.value.is_auto_rewrite, null)
   source_listener_id      = try(each.value.is_auto_rewrite, null) == true ? null : try(each.value.source_listener_id, null)
   source_rule_id          = try(each.value.is_auto_rewrite, null) == true ? null : try(each.value.source_rule_id, null)
+  rewrite_code            = try(each.value.rewrite_code, null)
+  take_url                = try(each.value.take_url, null)
+  # source_domian 仅在手动重定向（is_auto_rewrite = false）时有效，配置 rewrite_code 时为必填
+  source_domian = try(each.value.is_auto_rewrite, null) == true ? null : try(each.value.source_domian, null)
 }

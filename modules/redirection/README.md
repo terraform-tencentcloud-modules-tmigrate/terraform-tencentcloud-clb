@@ -45,6 +45,31 @@ inputs = {
 }
 ```
 
+### Manual rewrite with a status code
+
+`rewrite_code` (301 / 302 / 307) can be set for manual redirections. When it is set,
+`take_url` and `source_domian` must be provided as well — `source_domian` is the domain name of
+the source rule.
+
+```hcl
+inputs = {
+  clb_id = "lb-ponxxxxo"
+  redirections = {
+    "8081_to_8080" = {
+      target_listener_id = "lbl-knfxxxxq"
+      target_rule_id     = "loc-1coxxxxo"
+      source_listener_id = "lbl-8l1xxxx4"
+      source_rule_id     = "loc-l5yxxxxu"
+      rewrite_code       = 307
+      take_url           = true
+      source_domian      = "def.com"
+    }
+  }
+}
+```
+
+> All three fields are `ForceNew` — changing them recreates the redirection.
+
 
 ## Requirements
 
@@ -75,7 +100,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_clb_id"></a> [clb\_id](#input\_clb\_id) | load balancer id | `string` | n/a | yes |
 | <a name="input_create"></a> [create](#input\_create) | create or not | `bool` | `true` | no |
-| <a name="input_redirections"></a> [redirections](#input\_redirections) | see `tencentcloud_clb_redirection` | `any` | `{}` | no |
+| <a name="input_redirections"></a> [redirections](#input\_redirections) | see `tencentcloud_clb_redirection`, supports `rewrite_code`, `take_url` and `source_domian` | `any` | `{}` | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"ap-jakarta"` | no |
 
 ## Outputs

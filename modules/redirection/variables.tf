@@ -15,7 +15,7 @@ variable "clb_id" {
 }
 
 variable "redirections" {
-  description = "see `tencentcloud_clb_redirection`"
+  description = "see `tencentcloud_clb_redirection`, supports `rewrite_code`, `take_url` and `source_domian`"
   default     = {}
   type        = any
 }
