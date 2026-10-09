@@ -26,6 +26,8 @@ module "clb" {
 
   # logs
   create_clb_log = try(var.clb.create_clb_log, false)
+  create_log_set = try(var.clb.create_log_set, false)
+  create_log_topic = try(var.clb.create_log_topic, false)
   clb_log_set_period = try(var.clb.clb_log_set_period, null)
   clb_log_topic_name = try(var.clb.clb_log_topic_name, null)
   log_set_id = try(var.clb.log_set_id, null)
