@@ -47,6 +47,18 @@ variable "create_clb_log" {
   default     = false
 }
 
+variable "create_log_set" {
+  description = "Whether to create a CLB log set. Set to false when providing an existing log_set_id."
+  type        = bool
+  default     = true
+}
+
+variable "create_log_topic" {
+  description = "Whether to create a CLB log topic. Set to false when providing an existing log_topic_id."
+  type        = bool
+  default     = true
+}
+
 variable "clb_log_set_period" {
   type        = number
   default     = 7

@@ -1,8 +1,8 @@
 locals {
   this_clb_info      = data.tencentcloud_clb_instances.this.clb_list
   clb_id             = tencentcloud_clb_instance.this.id
-  log_set_id         = var.log_set_id == "" && var.create_clb_log ? tencentcloud_clb_log_set.set[0].id : var.log_set_id
-  log_topic_id       = var.log_topic_id == "" && var.create_clb_log ? tencentcloud_clb_log_topic.topic[0].id : var.log_topic_id
+  log_set_id         = var.create_clb_log && var.create_log_set ? tencentcloud_clb_log_set.set[0].id : var.log_set_id
+  log_topic_id       = var.create_clb_log && var.create_log_topic ? tencentcloud_clb_log_topic.topic[0].id : var.log_topic_id
   listener_resources = tencentcloud_clb_listener.listener
   rule_resources     = tencentcloud_clb_listener_rule.listener_rule
 }
@@ -62,12 +62,12 @@ data "tencentcloud_clb_instances" "this" {
 }
 
 resource "tencentcloud_clb_log_set" "set" {
-  count  = var.log_set_id == "" && var.create_clb_log ? 1 : 0
+  count  = var.create_clb_log && var.create_log_set ? 1 : 0
   period = var.clb_log_set_period
 }
 
 resource "tencentcloud_clb_log_topic" "topic" {
-  count      = var.log_topic_id == "" && var.create_clb_log ? 1 : 0
+  count      = var.create_clb_log && var.create_log_topic ? 1 : 0
   log_set_id = local.log_set_id
   topic_name = var.clb_log_topic_name
 }
